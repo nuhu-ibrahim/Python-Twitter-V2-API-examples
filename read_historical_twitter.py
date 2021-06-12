@@ -322,7 +322,7 @@ if __name__ == "__main__":
         spatial_query = 'place_country:GB OR place_country:US'
 
         # search conditions, i.e, date span and number of tweet. If you want to use only date span, pass number of tweets as -1 or don't pass it at all
-        start_date_request_ = '20015-08-15'
+        start_date_request_ = '2015-08-15'
         end_date_request_ = '2015-08-17'
         number_of_tweets = 100
 
