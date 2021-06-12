@@ -257,8 +257,8 @@ def retrieve_keyword_spartial(keyword_query, spatial_query, start_date, end_date
                 query, start_date_request, end_date_request)
             is_first = False
         else:
-            # Sleep for 3s per request because of twitter api limit
-            time.sleep(3)
+            # Sleep for 3.1s per request because of twitter api limit
+            time.sleep(3.1)
 
             search_response = keyword_spartial_search(
                 query, start_date_request, end_date_request, next_token_)
