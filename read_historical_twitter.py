@@ -101,7 +101,7 @@ def confirm_username(username):
     username_attr = "usernames="+username
     user_response = lookup_user(username_attr)
 
-    if 'data' in user_response and username == user_response['data'][0]['username']:
+    if 'data' in user_response and len(user_response['data']) > 0 and 'username' in user_response['data'][0] and username.lower() == user_response['data'][0]['username'].lower():
         return True
 
     return False
@@ -322,9 +322,9 @@ if __name__ == "__main__":
         spatial_query = 'place_country:GB OR place_country:US'
 
         # search conditions, i.e, date span and number of tweet. If you want to use only date span, pass number of tweets as -1 or don't pass it at all
-        start_date_request_ = '20015-08-15'
-        end_date_request_ = '2015-08-17'
-        number_of_tweets = 100
+        start_date_request_ = '2015-08-15'
+        end_date_request_ = '2020-08-17'
+        number_of_tweets = 5000
 
         # send the request and accept the response
         tweets, users, places, tweets_info, errors, media = retrieve_keyword_spartial(keyword_query, spatial_query,
